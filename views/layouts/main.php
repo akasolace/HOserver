@@ -45,18 +45,6 @@ AppAsset::register($this);
             ['label' => 'Gii', 'url' => ['/gii']]
             ) : (''),
 
-            Yii::$app->user->can('admin') ? (
-            ['label' => 'Webshell', 'url' => ['/webshell']]
-            ) : (''),
-
-            Yii::$app->user->can('admin') ? (
-            ['label' => 'DB Manager', 'url' => ['/db-manager']]
-            ) : (''),
-
-            Yii::$app->user->can('admin') ? (
-            ['label' => 'Scheduler', 'url' => ['/schedule-exec/run']]
-            ) : (''),
-
             // Hattrick Menu
             Yii::$app->user->can('manageUser') ? (
             ['label' => 'User', 'url' => ['/user']]

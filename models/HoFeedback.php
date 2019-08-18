@@ -86,6 +86,7 @@ class HoFeedback extends HoFeedbackBase
                 $player->experience = $p["m_iErfahrung"];
                 $player->form = $p["m_iForm"];
                 $player->stamina = $p["m_iKondition"];
+                $player->injury_status = $p["m_iVerletzt"];
                 $player->keeper = $p["m_iTorwart"];
                 $player->keeper += $p["m_dSubTorwart"];
                 $player->playmaking = $p["m_iSpielaufbau"];

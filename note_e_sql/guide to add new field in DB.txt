@@ -1,0 +1,51 @@
+Add new field in jsonobject or use the field already present in json object.
+    If need add new field in json object you should insert in feedbackplugin HO! side
+
+All steps in local php enviromnent, after, push on git and upload update files and db updates in remote server
+
+Add new field in DB in the correct table (using phpmyadmin):
+    ALTER TABLE `yii2_ho_feedback_player` ADD `injury_status` INT NOT NULL DEFAULT '0' AFTER `stamina`;
+
+Connect to http://hoserver.loc:8080/gii/model
+and regenerate the specific, in this case: models/base/HoFeedbackBase.php
+see the screenshot model_update.png, and fill field as see
+press 'preview'
+and check diff, generally we should see only some line in particular relaed to to directive 'use' and new fiels added., in this example
+	use app\models\User;
+use app\models\HoFeedback;
+use app\models\HoFeedbackPosition;
+copy these line and generate/overwrite
+open the file by ide and paste the difference on directive use.
+and new fiels added.
+
+Open the model models/HoFeedback.php that cointains the logic:
+and add the line to read a new value in correct section, in this case:
+       $player->injury_status = $p["m_iVerletzt"];
+at this moment you can check (by some tests) if the field is correct saved in db
+
+update the result view:
+update the file commands/UtilHoFeedbackController.php inserting the new field added
+open terminal in hoserver folder and run this command:
+php yii util-ho-feedback/create-sql-ho-result-view
+now open the script created and execute the script in db.
+
+Connect to http://hoserver.loc:8080/gii/model
+and update the base/HoFeedbackResultViewBase.php
+as do before check the difference and copy the code will be in new file (you can use the compare function in ide)
+
+update the front end views:
+http://hoserver.loc:8080/gii/crud
+and update the app\models\HoFeedbackResultView
+overwrite only these files:
+views/ho-feedback-result-view/index.php
+views/ho-feedback-result-view/view.php
+and check the difference and restore the code deleted
+first view.php and then index.php
+
+
+
+
+
+
+
+
