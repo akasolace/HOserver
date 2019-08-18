@@ -1,0 +1,35 @@
+-- UPDATE `yii2_ho_feedback` SET `elaborated`=0,`manual_elaboration`=1 WHERE 1
+
+################### Note #####################
+Modificato :
+            //$this->engine->reportico_ajax_script_url = $_SERVER["SCRIPT_NAME"]."/reportico/reportico/ajax";
+            $this->engine->reportico_ajax_script_url = "/reportico/reportico/ajax";
+nel modulo reportico
+
+
+################### Da fare #####################
+TODO Rilasciare su hosting.
+
+TODO sheduling https://github.com/omnilight/yii2-scheduling
+
+TODO salvatggio password criptate
+
+
+############### Installazione DB ###################
+./yii migrate --migrationPath=@yii/rbac/migrations
+
+execute note_e_sql/create_table_yii2_user.sql
+
+execute note_e_sql/create_tables_ho_feedback.sql
+
+execute note_e_sql/create_view_ho_feedback_result_2019-04-29-16:03:36.sql
+
+./yii rbac/init
+./yii user/init
+
+
+***************
+ALTER TABLE `yii2_ho_feedback_system_info` ADD `lineupName` VARCHAR(64) NOT NULL AFTER `ho_token`;
+ALTER TABLE `yii2_ho_feedback_rating` ADD `tacticType` INT NOT NULL AFTER `rightAttack`, ADD `tacticSkill` INT NOT NULL AFTER `tacticType`;
+ALTER TABLE `yii2_ho_feedback_rating` ADD `attitude` INT NOT NULL AFTER `tacticSkill`, ADD `style_of_play` INT NOT NULL AFTER `attitude`;
+
