@@ -112,18 +112,6 @@ $config = [
             'class' => 'kartik\grid\Module',
             // other module settings
         ],
-        'webshell' => [
-            'class' => 'samdark\webshell\Module',
-            // 'yiiScript' => Yii::getAlias('@root'). '/yii', // adjust path to point to your ./yii script
-            'allowedIPs' => ['*'],
-            'checkAccessCallback' => function (\yii\base\Action $action) {
-                if (Yii::$app->user->can('admin')) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        ],
     ],
     'params' => $params,
 ];

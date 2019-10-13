@@ -83,6 +83,9 @@ class HoFeedback extends HoFeedbackBase
                 $player->id_ho_feedback = $this->id;
 
                 $player->playerID = $p["m_iSpielerID"];
+                $player->tsi = $p["m_iTSI"];
+                $player->age = $p["m_iAlter"];
+                $player->age_days = $p["m_iAgeDays"];
                 $player->experience = $p["m_iErfahrung"];
                 $player->form = $p["m_iForm"];
                 $player->stamina = $p["m_iKondition"];

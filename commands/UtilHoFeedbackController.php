@@ -12,7 +12,7 @@ class UtilHoFeedbackController extends Controller
     public function actionCreateSqlHoResultView()
     {
         $roles_player = array('gk', 'cd_left', 'cd_central', 'cd_right', 'wb_left', 'wb_right', 'im_left', 'im_central', 'im_right', 'w_left', 'w_right', 'fw_left', 'fw_central', 'fw_right');
-        $data_player = array('id', 'experience', 'form', 'stamina', 'injury_status', 'keeper', 'playmaking', 'passing', 'winger', 'defending', 'scoring', 'set_pieces', 'loyalty', 'mother_club');
+        $data_player = array('id', 'tsi', 'age', 'age_days', 'experience', 'form', 'stamina', 'injury_status', 'keeper', 'playmaking', 'passing', 'winger', 'defending', 'scoring', 'set_pieces', 'loyalty', 'mother_club');
         echo "**** Avvio: CreateSqlFinalView ****\n";
 
         $sql = "create view yii2_ho_feedback_result_view as (\n";

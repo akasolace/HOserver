@@ -33,3 +33,7 @@ ALTER TABLE `yii2_ho_feedback_system_info` ADD `lineupName` VARCHAR(64) NOT NULL
 ALTER TABLE `yii2_ho_feedback_rating` ADD `tacticType` INT NOT NULL AFTER `rightAttack`, ADD `tacticSkill` INT NOT NULL AFTER `tacticType`;
 ALTER TABLE `yii2_ho_feedback_rating` ADD `attitude` INT NOT NULL AFTER `tacticSkill`, ADD `style_of_play` INT NOT NULL AFTER `attitude`;
 
+***************
+TSI and AGE
+ALTER TABLE `yii2_ho_feedback_player` ADD `tsi` INT NOT NULL DEFAULT '0' AFTER `playerID`, ADD `age` INT NOT NULL DEFAULT '0' AFTER `tsi`, ADD `age_days` INT NOT NULL DEFAULT '0' AFTER `age`;
+

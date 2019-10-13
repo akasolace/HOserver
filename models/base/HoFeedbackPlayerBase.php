@@ -16,6 +16,9 @@ use app\models\HoFeedbackPosition;
  * @property int $created_by
  * @property int $updated_by
  * @property int $playerID
+ * @property int $tsi
+ * @property int $age
+ * @property int $age_days
  * @property double $experience
  * @property double $form
  * @property double $stamina
@@ -66,7 +69,7 @@ class HoFeedbackPlayerBase extends \yii\db\ActiveRecord
     {
         return [
             [['created_at', 'updated_at'], 'safe'],
-            [['created_by', 'updated_by', 'playerID', 'injury_status', 'mother_club', 'id_ho_feedback'], 'integer'],
+            [['created_by', 'updated_by', 'playerID', 'tsi', 'age', 'age_days', 'injury_status', 'mother_club', 'id_ho_feedback'], 'integer'],
             [['experience', 'form', 'stamina', 'keeper', 'playmaking', 'passing', 'winger', 'defending', 'scoring', 'set_pieces', 'loyalty'], 'number'],
             [['id_ho_feedback'], 'required'],
             [['id_ho_feedback'], 'exist', 'skipOnError' => true, 'targetClass' => HoFeedback::className(), 'targetAttribute' => ['id_ho_feedback' => 'id']],
@@ -87,6 +90,9 @@ class HoFeedbackPlayerBase extends \yii\db\ActiveRecord
             'created_by' => Yii::t('app', 'Created By'),
             'updated_by' => Yii::t('app', 'Updated By'),
             'playerID' => Yii::t('app', 'Player ID'),
+            'tsi' => Yii::t('app', 'Tsi'),
+            'age' => Yii::t('app', 'Age'),
+            'age_days' => Yii::t('app', 'Age Days'),
             'experience' => Yii::t('app', 'Experience'),
             'form' => Yii::t('app', 'Form'),
             'stamina' => Yii::t('app', 'Stamina'),

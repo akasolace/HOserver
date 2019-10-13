@@ -30,6 +30,9 @@ left join (select
     position.id_ho_feedback
     ,position.id_gk as position_id_gk
     ,gk.id as gk_id
+    ,gk.tsi as gk_tsi
+    ,gk.age as gk_age
+    ,gk.age_days as gk_age_days
     ,gk.experience as gk_experience
     ,gk.form as gk_form
     ,gk.stamina as gk_stamina
@@ -45,6 +48,9 @@ left join (select
     ,gk.mother_club as gk_mother_club
     ,position.id_cd_left as position_id_cd_left
     ,cd_left.id as cd_left_id
+    ,cd_left.tsi as cd_left_tsi
+    ,cd_left.age as cd_left_age
+    ,cd_left.age_days as cd_left_age_days
     ,cd_left.experience as cd_left_experience
     ,cd_left.form as cd_left_form
     ,cd_left.stamina as cd_left_stamina
@@ -60,6 +66,9 @@ left join (select
     ,cd_left.mother_club as cd_left_mother_club
     ,position.id_cd_central as position_id_cd_central
     ,cd_central.id as cd_central_id
+    ,cd_central.tsi as cd_central_tsi
+    ,cd_central.age as cd_central_age
+    ,cd_central.age_days as cd_central_age_days
     ,cd_central.experience as cd_central_experience
     ,cd_central.form as cd_central_form
     ,cd_central.stamina as cd_central_stamina
@@ -75,6 +84,9 @@ left join (select
     ,cd_central.mother_club as cd_central_mother_club
     ,position.id_cd_right as position_id_cd_right
     ,cd_right.id as cd_right_id
+    ,cd_right.tsi as cd_right_tsi
+    ,cd_right.age as cd_right_age
+    ,cd_right.age_days as cd_right_age_days
     ,cd_right.experience as cd_right_experience
     ,cd_right.form as cd_right_form
     ,cd_right.stamina as cd_right_stamina
@@ -90,6 +102,9 @@ left join (select
     ,cd_right.mother_club as cd_right_mother_club
     ,position.id_wb_left as position_id_wb_left
     ,wb_left.id as wb_left_id
+    ,wb_left.tsi as wb_left_tsi
+    ,wb_left.age as wb_left_age
+    ,wb_left.age_days as wb_left_age_days
     ,wb_left.experience as wb_left_experience
     ,wb_left.form as wb_left_form
     ,wb_left.stamina as wb_left_stamina
@@ -105,6 +120,9 @@ left join (select
     ,wb_left.mother_club as wb_left_mother_club
     ,position.id_wb_right as position_id_wb_right
     ,wb_right.id as wb_right_id
+    ,wb_right.tsi as wb_right_tsi
+    ,wb_right.age as wb_right_age
+    ,wb_right.age_days as wb_right_age_days
     ,wb_right.experience as wb_right_experience
     ,wb_right.form as wb_right_form
     ,wb_right.stamina as wb_right_stamina
@@ -120,6 +138,9 @@ left join (select
     ,wb_right.mother_club as wb_right_mother_club
     ,position.id_im_left as position_id_im_left
     ,im_left.id as im_left_id
+    ,im_left.tsi as im_left_tsi
+    ,im_left.age as im_left_age
+    ,im_left.age_days as im_left_age_days
     ,im_left.experience as im_left_experience
     ,im_left.form as im_left_form
     ,im_left.stamina as im_left_stamina
@@ -135,6 +156,9 @@ left join (select
     ,im_left.mother_club as im_left_mother_club
     ,position.id_im_central as position_id_im_central
     ,im_central.id as im_central_id
+    ,im_central.tsi as im_central_tsi
+    ,im_central.age as im_central_age
+    ,im_central.age_days as im_central_age_days
     ,im_central.experience as im_central_experience
     ,im_central.form as im_central_form
     ,im_central.stamina as im_central_stamina
@@ -150,6 +174,9 @@ left join (select
     ,im_central.mother_club as im_central_mother_club
     ,position.id_im_right as position_id_im_right
     ,im_right.id as im_right_id
+    ,im_right.tsi as im_right_tsi
+    ,im_right.age as im_right_age
+    ,im_right.age_days as im_right_age_days
     ,im_right.experience as im_right_experience
     ,im_right.form as im_right_form
     ,im_right.stamina as im_right_stamina
@@ -165,6 +192,9 @@ left join (select
     ,im_right.mother_club as im_right_mother_club
     ,position.id_w_left as position_id_w_left
     ,w_left.id as w_left_id
+    ,w_left.tsi as w_left_tsi
+    ,w_left.age as w_left_age
+    ,w_left.age_days as w_left_age_days
     ,w_left.experience as w_left_experience
     ,w_left.form as w_left_form
     ,w_left.stamina as w_left_stamina
@@ -180,6 +210,9 @@ left join (select
     ,w_left.mother_club as w_left_mother_club
     ,position.id_w_right as position_id_w_right
     ,w_right.id as w_right_id
+    ,w_right.tsi as w_right_tsi
+    ,w_right.age as w_right_age
+    ,w_right.age_days as w_right_age_days
     ,w_right.experience as w_right_experience
     ,w_right.form as w_right_form
     ,w_right.stamina as w_right_stamina
@@ -195,6 +228,9 @@ left join (select
     ,w_right.mother_club as w_right_mother_club
     ,position.id_fw_left as position_id_fw_left
     ,fw_left.id as fw_left_id
+    ,fw_left.tsi as fw_left_tsi
+    ,fw_left.age as fw_left_age
+    ,fw_left.age_days as fw_left_age_days
     ,fw_left.experience as fw_left_experience
     ,fw_left.form as fw_left_form
     ,fw_left.stamina as fw_left_stamina
@@ -210,6 +246,9 @@ left join (select
     ,fw_left.mother_club as fw_left_mother_club
     ,position.id_fw_central as position_id_fw_central
     ,fw_central.id as fw_central_id
+    ,fw_central.tsi as fw_central_tsi
+    ,fw_central.age as fw_central_age
+    ,fw_central.age_days as fw_central_age_days
     ,fw_central.experience as fw_central_experience
     ,fw_central.form as fw_central_form
     ,fw_central.stamina as fw_central_stamina
@@ -225,6 +264,9 @@ left join (select
     ,fw_central.mother_club as fw_central_mother_club
     ,position.id_fw_right as position_id_fw_right
     ,fw_right.id as fw_right_id
+    ,fw_right.tsi as fw_right_tsi
+    ,fw_right.age as fw_right_age
+    ,fw_right.age_days as fw_right_age_days
     ,fw_right.experience as fw_right_experience
     ,fw_right.form as fw_right_form
     ,fw_right.stamina as fw_right_stamina

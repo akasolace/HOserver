@@ -22,12 +22,7 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.1.0",
-        "kartik-v/yii2-export": "@dev",
-        "reportico/yii2-reportico": "dev-master",
-        "samdark/yii2-webshell": "~2.0",
-        "beaten-sect0r/yii2-db-manager": "*",
-        "omnilight/yii2-scheduling": "*",
-        "tebazil/yii2-console-runner": "*"
+        "kartik-v/yii2-export": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

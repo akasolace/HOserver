@@ -1,12 +1,12 @@
 <?php
 
-$ini = parse_ini_file('../private/credentials.ini', true);
+$params = require __DIR__ . '/../private/credentials.php';
 
 return [
     'class'    => 'yii\db\Connection',
-    'dsn'      => $ini['db']['dsn'],
-    'username' => $ini['db']['username'],
-    'password' => $ini['db']['password'],
+    'dsn'      => $params['dsn'],
+    'username' => $params['username'],
+    'password' => $params['password'],
     'charset' => 'utf8',
     'tablePrefix' => 'yii2_'
 
