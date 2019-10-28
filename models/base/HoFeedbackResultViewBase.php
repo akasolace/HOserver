@@ -35,6 +35,7 @@ use Yii;
  * @property int $position_id_gk "m_iId": 100
  * @property int $gk_id
  * @property int $gk_tsi
+ * @property double $gk_salary
  * @property int $gk_age
  * @property int $gk_age_days
  * @property double $gk_experience
@@ -53,6 +54,7 @@ use Yii;
  * @property int $position_id_cd_left "m_iId": 104
  * @property int $cd_left_id
  * @property int $cd_left_tsi
+ * @property double $cd_left_salary
  * @property int $cd_left_age
  * @property int $cd_left_age_days
  * @property double $cd_left_experience
@@ -71,6 +73,7 @@ use Yii;
  * @property int $position_id_cd_central "m_iId": 103
  * @property int $cd_central_id
  * @property int $cd_central_tsi
+ * @property double $cd_central_salary
  * @property int $cd_central_age
  * @property int $cd_central_age_days
  * @property double $cd_central_experience
@@ -89,6 +92,7 @@ use Yii;
  * @property int $position_id_cd_right "m_iId": 102
  * @property int $cd_right_id
  * @property int $cd_right_tsi
+ * @property double $cd_right_salary
  * @property int $cd_right_age
  * @property int $cd_right_age_days
  * @property double $cd_right_experience
@@ -107,6 +111,7 @@ use Yii;
  * @property int $position_id_wb_left "m_iId": 105
  * @property int $wb_left_id
  * @property int $wb_left_tsi
+ * @property double $wb_left_salary
  * @property int $wb_left_age
  * @property int $wb_left_age_days
  * @property double $wb_left_experience
@@ -125,6 +130,7 @@ use Yii;
  * @property int $position_id_wb_right "m_iId": 101
  * @property int $wb_right_id
  * @property int $wb_right_tsi
+ * @property double $wb_right_salary
  * @property int $wb_right_age
  * @property int $wb_right_age_days
  * @property double $wb_right_experience
@@ -143,6 +149,7 @@ use Yii;
  * @property int $position_id_im_left "m_iId": 109
  * @property int $im_left_id
  * @property int $im_left_tsi
+ * @property double $im_left_salary
  * @property int $im_left_age
  * @property int $im_left_age_days
  * @property double $im_left_experience
@@ -161,6 +168,7 @@ use Yii;
  * @property int $position_id_im_central "m_iId": 108
  * @property int $im_central_id
  * @property int $im_central_tsi
+ * @property double $im_central_salary
  * @property int $im_central_age
  * @property int $im_central_age_days
  * @property double $im_central_experience
@@ -179,6 +187,7 @@ use Yii;
  * @property int $position_id_im_right "m_iId": 107
  * @property int $im_right_id
  * @property int $im_right_tsi
+ * @property double $im_right_salary
  * @property int $im_right_age
  * @property int $im_right_age_days
  * @property double $im_right_experience
@@ -197,6 +206,7 @@ use Yii;
  * @property int $position_id_w_left "m_iId": 110
  * @property int $w_left_id
  * @property int $w_left_tsi
+ * @property double $w_left_salary
  * @property int $w_left_age
  * @property int $w_left_age_days
  * @property double $w_left_experience
@@ -215,6 +225,7 @@ use Yii;
  * @property int $position_id_w_right "m_iId": 106
  * @property int $w_right_id
  * @property int $w_right_tsi
+ * @property double $w_right_salary
  * @property int $w_right_age
  * @property int $w_right_age_days
  * @property double $w_right_experience
@@ -233,6 +244,7 @@ use Yii;
  * @property int $position_id_fw_left "m_iId": 113
  * @property int $fw_left_id
  * @property int $fw_left_tsi
+ * @property double $fw_left_salary
  * @property int $fw_left_age
  * @property int $fw_left_age_days
  * @property double $fw_left_experience
@@ -251,6 +263,7 @@ use Yii;
  * @property int $position_id_fw_central "m_iId": 112
  * @property int $fw_central_id
  * @property int $fw_central_tsi
+ * @property double $fw_central_salary
  * @property int $fw_central_age
  * @property int $fw_central_age_days
  * @property double $fw_central_experience
@@ -269,6 +282,7 @@ use Yii;
  * @property int $position_id_fw_right "m_iId": 111
  * @property int $fw_right_id
  * @property int $fw_right_tsi
+ * @property double $fw_right_salary
  * @property int $fw_right_age
  * @property int $fw_right_age_days
  * @property double $fw_right_experience
@@ -303,7 +317,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
         return [
             [['id', 'created_by', 'updated_by', 'elaborated', 'manual_elaboration', 'tacticType', 'tacticSkill', 'attitude', 'style_of_play', 'id_ho_feedback', 'position_id_gk', 'gk_id', 'gk_tsi', 'gk_age', 'gk_age_days', 'gk_injury_status', 'gk_mother_club', 'position_id_cd_left', 'cd_left_id', 'cd_left_tsi', 'cd_left_age', 'cd_left_age_days', 'cd_left_injury_status', 'cd_left_mother_club', 'position_id_cd_central', 'cd_central_id', 'cd_central_tsi', 'cd_central_age', 'cd_central_age_days', 'cd_central_injury_status', 'cd_central_mother_club', 'position_id_cd_right', 'cd_right_id', 'cd_right_tsi', 'cd_right_age', 'cd_right_age_days', 'cd_right_injury_status', 'cd_right_mother_club', 'position_id_wb_left', 'wb_left_id', 'wb_left_tsi', 'wb_left_age', 'wb_left_age_days', 'wb_left_injury_status', 'wb_left_mother_club', 'position_id_wb_right', 'wb_right_id', 'wb_right_tsi', 'wb_right_age', 'wb_right_age_days', 'wb_right_injury_status', 'wb_right_mother_club', 'position_id_im_left', 'im_left_id', 'im_left_tsi', 'im_left_age', 'im_left_age_days', 'im_left_injury_status', 'im_left_mother_club', 'position_id_im_central', 'im_central_id', 'im_central_tsi', 'im_central_age', 'im_central_age_days', 'im_central_injury_status', 'im_central_mother_club', 'position_id_im_right', 'im_right_id', 'im_right_tsi', 'im_right_age', 'im_right_age_days', 'im_right_injury_status', 'im_right_mother_club', 'position_id_w_left', 'w_left_id', 'w_left_tsi', 'w_left_age', 'w_left_age_days', 'w_left_injury_status', 'w_left_mother_club', 'position_id_w_right', 'w_right_id', 'w_right_tsi', 'w_right_age', 'w_right_age_days', 'w_right_injury_status', 'w_right_mother_club', 'position_id_fw_left', 'fw_left_id', 'fw_left_tsi', 'fw_left_age', 'fw_left_age_days', 'fw_left_injury_status', 'fw_left_mother_club', 'position_id_fw_central', 'fw_central_id', 'fw_central_tsi', 'fw_central_age', 'fw_central_age_days', 'fw_central_injury_status', 'fw_central_mother_club', 'position_id_fw_right', 'fw_right_id', 'fw_right_tsi', 'fw_right_age', 'fw_right_age_days', 'fw_right_injury_status', 'fw_right_mother_club'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['leftDefense', 'centralDefense', 'rightDefense', 'midfield', 'leftAttack', 'centralAttack', 'rightAttack', 'gk_experience', 'gk_form', 'gk_stamina', 'gk_keeper', 'gk_playmaking', 'gk_passing', 'gk_winger', 'gk_defending', 'gk_scoring', 'gk_set_pieces', 'gk_loyalty', 'cd_left_experience', 'cd_left_form', 'cd_left_stamina', 'cd_left_keeper', 'cd_left_playmaking', 'cd_left_passing', 'cd_left_winger', 'cd_left_defending', 'cd_left_scoring', 'cd_left_set_pieces', 'cd_left_loyalty', 'cd_central_experience', 'cd_central_form', 'cd_central_stamina', 'cd_central_keeper', 'cd_central_playmaking', 'cd_central_passing', 'cd_central_winger', 'cd_central_defending', 'cd_central_scoring', 'cd_central_set_pieces', 'cd_central_loyalty', 'cd_right_experience', 'cd_right_form', 'cd_right_stamina', 'cd_right_keeper', 'cd_right_playmaking', 'cd_right_passing', 'cd_right_winger', 'cd_right_defending', 'cd_right_scoring', 'cd_right_set_pieces', 'cd_right_loyalty', 'wb_left_experience', 'wb_left_form', 'wb_left_stamina', 'wb_left_keeper', 'wb_left_playmaking', 'wb_left_passing', 'wb_left_winger', 'wb_left_defending', 'wb_left_scoring', 'wb_left_set_pieces', 'wb_left_loyalty', 'wb_right_experience', 'wb_right_form', 'wb_right_stamina', 'wb_right_keeper', 'wb_right_playmaking', 'wb_right_passing', 'wb_right_winger', 'wb_right_defending', 'wb_right_scoring', 'wb_right_set_pieces', 'wb_right_loyalty', 'im_left_experience', 'im_left_form', 'im_left_stamina', 'im_left_keeper', 'im_left_playmaking', 'im_left_passing', 'im_left_winger', 'im_left_defending', 'im_left_scoring', 'im_left_set_pieces', 'im_left_loyalty', 'im_central_experience', 'im_central_form', 'im_central_stamina', 'im_central_keeper', 'im_central_playmaking', 'im_central_passing', 'im_central_winger', 'im_central_defending', 'im_central_scoring', 'im_central_set_pieces', 'im_central_loyalty', 'im_right_experience', 'im_right_form', 'im_right_stamina', 'im_right_keeper', 'im_right_playmaking', 'im_right_passing', 'im_right_winger', 'im_right_defending', 'im_right_scoring', 'im_right_set_pieces', 'im_right_loyalty', 'w_left_experience', 'w_left_form', 'w_left_stamina', 'w_left_keeper', 'w_left_playmaking', 'w_left_passing', 'w_left_winger', 'w_left_defending', 'w_left_scoring', 'w_left_set_pieces', 'w_left_loyalty', 'w_right_experience', 'w_right_form', 'w_right_stamina', 'w_right_keeper', 'w_right_playmaking', 'w_right_passing', 'w_right_winger', 'w_right_defending', 'w_right_scoring', 'w_right_set_pieces', 'w_right_loyalty', 'fw_left_experience', 'fw_left_form', 'fw_left_stamina', 'fw_left_keeper', 'fw_left_playmaking', 'fw_left_passing', 'fw_left_winger', 'fw_left_defending', 'fw_left_scoring', 'fw_left_set_pieces', 'fw_left_loyalty', 'fw_central_experience', 'fw_central_form', 'fw_central_stamina', 'fw_central_keeper', 'fw_central_playmaking', 'fw_central_passing', 'fw_central_winger', 'fw_central_defending', 'fw_central_scoring', 'fw_central_set_pieces', 'fw_central_loyalty', 'fw_right_experience', 'fw_right_form', 'fw_right_stamina', 'fw_right_keeper', 'fw_right_playmaking', 'fw_right_passing', 'fw_right_winger', 'fw_right_defending', 'fw_right_scoring', 'fw_right_set_pieces', 'fw_right_loyalty'], 'number'],
+            [['leftDefense', 'centralDefense', 'rightDefense', 'midfield', 'leftAttack', 'centralAttack', 'rightAttack', 'gk_salary', 'gk_experience', 'gk_form', 'gk_stamina', 'gk_keeper', 'gk_playmaking', 'gk_passing', 'gk_winger', 'gk_defending', 'gk_scoring', 'gk_set_pieces', 'gk_loyalty', 'cd_left_salary', 'cd_left_experience', 'cd_left_form', 'cd_left_stamina', 'cd_left_keeper', 'cd_left_playmaking', 'cd_left_passing', 'cd_left_winger', 'cd_left_defending', 'cd_left_scoring', 'cd_left_set_pieces', 'cd_left_loyalty', 'cd_central_salary', 'cd_central_experience', 'cd_central_form', 'cd_central_stamina', 'cd_central_keeper', 'cd_central_playmaking', 'cd_central_passing', 'cd_central_winger', 'cd_central_defending', 'cd_central_scoring', 'cd_central_set_pieces', 'cd_central_loyalty', 'cd_right_salary', 'cd_right_experience', 'cd_right_form', 'cd_right_stamina', 'cd_right_keeper', 'cd_right_playmaking', 'cd_right_passing', 'cd_right_winger', 'cd_right_defending', 'cd_right_scoring', 'cd_right_set_pieces', 'cd_right_loyalty', 'wb_left_salary', 'wb_left_experience', 'wb_left_form', 'wb_left_stamina', 'wb_left_keeper', 'wb_left_playmaking', 'wb_left_passing', 'wb_left_winger', 'wb_left_defending', 'wb_left_scoring', 'wb_left_set_pieces', 'wb_left_loyalty', 'wb_right_salary', 'wb_right_experience', 'wb_right_form', 'wb_right_stamina', 'wb_right_keeper', 'wb_right_playmaking', 'wb_right_passing', 'wb_right_winger', 'wb_right_defending', 'wb_right_scoring', 'wb_right_set_pieces', 'wb_right_loyalty', 'im_left_salary', 'im_left_experience', 'im_left_form', 'im_left_stamina', 'im_left_keeper', 'im_left_playmaking', 'im_left_passing', 'im_left_winger', 'im_left_defending', 'im_left_scoring', 'im_left_set_pieces', 'im_left_loyalty', 'im_central_salary', 'im_central_experience', 'im_central_form', 'im_central_stamina', 'im_central_keeper', 'im_central_playmaking', 'im_central_passing', 'im_central_winger', 'im_central_defending', 'im_central_scoring', 'im_central_set_pieces', 'im_central_loyalty', 'im_right_salary', 'im_right_experience', 'im_right_form', 'im_right_stamina', 'im_right_keeper', 'im_right_playmaking', 'im_right_passing', 'im_right_winger', 'im_right_defending', 'im_right_scoring', 'im_right_set_pieces', 'im_right_loyalty', 'w_left_salary', 'w_left_experience', 'w_left_form', 'w_left_stamina', 'w_left_keeper', 'w_left_playmaking', 'w_left_passing', 'w_left_winger', 'w_left_defending', 'w_left_scoring', 'w_left_set_pieces', 'w_left_loyalty', 'w_right_salary', 'w_right_experience', 'w_right_form', 'w_right_stamina', 'w_right_keeper', 'w_right_playmaking', 'w_right_passing', 'w_right_winger', 'w_right_defending', 'w_right_scoring', 'w_right_set_pieces', 'w_right_loyalty', 'fw_left_salary', 'fw_left_experience', 'fw_left_form', 'fw_left_stamina', 'fw_left_keeper', 'fw_left_playmaking', 'fw_left_passing', 'fw_left_winger', 'fw_left_defending', 'fw_left_scoring', 'fw_left_set_pieces', 'fw_left_loyalty', 'fw_central_salary', 'fw_central_experience', 'fw_central_form', 'fw_central_stamina', 'fw_central_keeper', 'fw_central_playmaking', 'fw_central_passing', 'fw_central_winger', 'fw_central_defending', 'fw_central_scoring', 'fw_central_set_pieces', 'fw_central_loyalty', 'fw_right_salary', 'fw_right_experience', 'fw_right_form', 'fw_right_stamina', 'fw_right_keeper', 'fw_right_playmaking', 'fw_right_passing', 'fw_right_winger', 'fw_right_defending', 'fw_right_scoring', 'fw_right_set_pieces', 'fw_right_loyalty'], 'number'],
             [['os', 'ho_version', 'java_version', 'ho_token'], 'string', 'max' => 255],
             [['lineupName'], 'string', 'max' => 64],
         ];
@@ -342,6 +356,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_gk' => Yii::t('app', 'Position Id Gk'),
             'gk_id' => Yii::t('app', 'Gk ID'),
             'gk_tsi' => Yii::t('app', 'Gk Tsi'),
+            'gk_salary' => Yii::t('app', 'Gk Salary'),
             'gk_age' => Yii::t('app', 'Gk Age'),
             'gk_age_days' => Yii::t('app', 'Gk Age Days'),
             'gk_experience' => Yii::t('app', 'Gk Experience'),
@@ -360,6 +375,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_cd_left' => Yii::t('app', 'Position Id Cd Left'),
             'cd_left_id' => Yii::t('app', 'Cd Left ID'),
             'cd_left_tsi' => Yii::t('app', 'Cd Left Tsi'),
+            'cd_left_salary' => Yii::t('app', 'Cd Left Salary'),
             'cd_left_age' => Yii::t('app', 'Cd Left Age'),
             'cd_left_age_days' => Yii::t('app', 'Cd Left Age Days'),
             'cd_left_experience' => Yii::t('app', 'Cd Left Experience'),
@@ -378,6 +394,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_cd_central' => Yii::t('app', 'Position Id Cd Central'),
             'cd_central_id' => Yii::t('app', 'Cd Central ID'),
             'cd_central_tsi' => Yii::t('app', 'Cd Central Tsi'),
+            'cd_central_salary' => Yii::t('app', 'Cd Central Salary'),
             'cd_central_age' => Yii::t('app', 'Cd Central Age'),
             'cd_central_age_days' => Yii::t('app', 'Cd Central Age Days'),
             'cd_central_experience' => Yii::t('app', 'Cd Central Experience'),
@@ -396,6 +413,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_cd_right' => Yii::t('app', 'Position Id Cd Right'),
             'cd_right_id' => Yii::t('app', 'Cd Right ID'),
             'cd_right_tsi' => Yii::t('app', 'Cd Right Tsi'),
+            'cd_right_salary' => Yii::t('app', 'Cd Right Salary'),
             'cd_right_age' => Yii::t('app', 'Cd Right Age'),
             'cd_right_age_days' => Yii::t('app', 'Cd Right Age Days'),
             'cd_right_experience' => Yii::t('app', 'Cd Right Experience'),
@@ -414,6 +432,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_wb_left' => Yii::t('app', 'Position Id Wb Left'),
             'wb_left_id' => Yii::t('app', 'Wb Left ID'),
             'wb_left_tsi' => Yii::t('app', 'Wb Left Tsi'),
+            'wb_left_salary' => Yii::t('app', 'Wb Left Salary'),
             'wb_left_age' => Yii::t('app', 'Wb Left Age'),
             'wb_left_age_days' => Yii::t('app', 'Wb Left Age Days'),
             'wb_left_experience' => Yii::t('app', 'Wb Left Experience'),
@@ -432,6 +451,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_wb_right' => Yii::t('app', 'Position Id Wb Right'),
             'wb_right_id' => Yii::t('app', 'Wb Right ID'),
             'wb_right_tsi' => Yii::t('app', 'Wb Right Tsi'),
+            'wb_right_salary' => Yii::t('app', 'Wb Right Salary'),
             'wb_right_age' => Yii::t('app', 'Wb Right Age'),
             'wb_right_age_days' => Yii::t('app', 'Wb Right Age Days'),
             'wb_right_experience' => Yii::t('app', 'Wb Right Experience'),
@@ -450,6 +470,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_im_left' => Yii::t('app', 'Position Id Im Left'),
             'im_left_id' => Yii::t('app', 'Im Left ID'),
             'im_left_tsi' => Yii::t('app', 'Im Left Tsi'),
+            'im_left_salary' => Yii::t('app', 'Im Left Salary'),
             'im_left_age' => Yii::t('app', 'Im Left Age'),
             'im_left_age_days' => Yii::t('app', 'Im Left Age Days'),
             'im_left_experience' => Yii::t('app', 'Im Left Experience'),
@@ -468,6 +489,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_im_central' => Yii::t('app', 'Position Id Im Central'),
             'im_central_id' => Yii::t('app', 'Im Central ID'),
             'im_central_tsi' => Yii::t('app', 'Im Central Tsi'),
+            'im_central_salary' => Yii::t('app', 'Im Central Salary'),
             'im_central_age' => Yii::t('app', 'Im Central Age'),
             'im_central_age_days' => Yii::t('app', 'Im Central Age Days'),
             'im_central_experience' => Yii::t('app', 'Im Central Experience'),
@@ -486,6 +508,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_im_right' => Yii::t('app', 'Position Id Im Right'),
             'im_right_id' => Yii::t('app', 'Im Right ID'),
             'im_right_tsi' => Yii::t('app', 'Im Right Tsi'),
+            'im_right_salary' => Yii::t('app', 'Im Right Salary'),
             'im_right_age' => Yii::t('app', 'Im Right Age'),
             'im_right_age_days' => Yii::t('app', 'Im Right Age Days'),
             'im_right_experience' => Yii::t('app', 'Im Right Experience'),
@@ -504,6 +527,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_w_left' => Yii::t('app', 'Position Id W Left'),
             'w_left_id' => Yii::t('app', 'W Left ID'),
             'w_left_tsi' => Yii::t('app', 'W Left Tsi'),
+            'w_left_salary' => Yii::t('app', 'W Left Salary'),
             'w_left_age' => Yii::t('app', 'W Left Age'),
             'w_left_age_days' => Yii::t('app', 'W Left Age Days'),
             'w_left_experience' => Yii::t('app', 'W Left Experience'),
@@ -522,6 +546,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_w_right' => Yii::t('app', 'Position Id W Right'),
             'w_right_id' => Yii::t('app', 'W Right ID'),
             'w_right_tsi' => Yii::t('app', 'W Right Tsi'),
+            'w_right_salary' => Yii::t('app', 'W Right Salary'),
             'w_right_age' => Yii::t('app', 'W Right Age'),
             'w_right_age_days' => Yii::t('app', 'W Right Age Days'),
             'w_right_experience' => Yii::t('app', 'W Right Experience'),
@@ -540,6 +565,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_fw_left' => Yii::t('app', 'Position Id Fw Left'),
             'fw_left_id' => Yii::t('app', 'Fw Left ID'),
             'fw_left_tsi' => Yii::t('app', 'Fw Left Tsi'),
+            'fw_left_salary' => Yii::t('app', 'Fw Left Salary'),
             'fw_left_age' => Yii::t('app', 'Fw Left Age'),
             'fw_left_age_days' => Yii::t('app', 'Fw Left Age Days'),
             'fw_left_experience' => Yii::t('app', 'Fw Left Experience'),
@@ -558,6 +584,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_fw_central' => Yii::t('app', 'Position Id Fw Central'),
             'fw_central_id' => Yii::t('app', 'Fw Central ID'),
             'fw_central_tsi' => Yii::t('app', 'Fw Central Tsi'),
+            'fw_central_salary' => Yii::t('app', 'Fw Central Salary'),
             'fw_central_age' => Yii::t('app', 'Fw Central Age'),
             'fw_central_age_days' => Yii::t('app', 'Fw Central Age Days'),
             'fw_central_experience' => Yii::t('app', 'Fw Central Experience'),
@@ -576,6 +603,7 @@ class HoFeedbackResultViewBase extends \yii\db\ActiveRecord
             'position_id_fw_right' => Yii::t('app', 'Position Id Fw Right'),
             'fw_right_id' => Yii::t('app', 'Fw Right ID'),
             'fw_right_tsi' => Yii::t('app', 'Fw Right Tsi'),
+            'fw_right_salary' => Yii::t('app', 'Fw Right Salary'),
             'fw_right_age' => Yii::t('app', 'Fw Right Age'),
             'fw_right_age_days' => Yii::t('app', 'Fw Right Age Days'),
             'fw_right_experience' => Yii::t('app', 'Fw Right Experience'),

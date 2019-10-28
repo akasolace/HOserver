@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\HoFeedbackResultView */
@@ -16,22 +15,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <p>
+        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'method' => 'post',
+            ],
+        ]) ?>
+    </p>
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'created_at:datetime',
-            'updated_at:datetime',
-            [
-                'label' => 'Created By',
-                'attribute' => 'createdBy.username'
-            ],
-            [
-                'label' => 'Updated By',
-                'attribute' => 'updatedBy.username'
-            ],
-            'elaborated:boolean',
-            'manual_elaboration:boolean',
+            'created_at',
+            'updated_at',
+            'created_by',
+            'updated_by',
+            'elaborated',
+            'manual_elaboration',
             'os',
             'ho_version',
             'java_version',
@@ -51,6 +55,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_ho_feedback',
             'position_id_gk',
             'gk_id',
+            'gk_tsi',
+            'gk_salary',
+            'gk_age',
+            'gk_age_days',
             'gk_experience',
             'gk_form',
             'gk_stamina',
@@ -66,6 +74,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'gk_mother_club',
             'position_id_cd_left',
             'cd_left_id',
+            'cd_left_tsi',
+            'cd_left_salary',
+            'cd_left_age',
+            'cd_left_age_days',
             'cd_left_experience',
             'cd_left_form',
             'cd_left_stamina',
@@ -81,6 +93,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'cd_left_mother_club',
             'position_id_cd_central',
             'cd_central_id',
+            'cd_central_tsi',
+            'cd_central_salary',
+            'cd_central_age',
+            'cd_central_age_days',
             'cd_central_experience',
             'cd_central_form',
             'cd_central_stamina',
@@ -96,6 +112,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'cd_central_mother_club',
             'position_id_cd_right',
             'cd_right_id',
+            'cd_right_tsi',
+            'cd_right_salary',
+            'cd_right_age',
+            'cd_right_age_days',
             'cd_right_experience',
             'cd_right_form',
             'cd_right_stamina',
@@ -111,6 +131,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'cd_right_mother_club',
             'position_id_wb_left',
             'wb_left_id',
+            'wb_left_tsi',
+            'wb_left_salary',
+            'wb_left_age',
+            'wb_left_age_days',
             'wb_left_experience',
             'wb_left_form',
             'wb_left_stamina',
@@ -126,6 +150,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'wb_left_mother_club',
             'position_id_wb_right',
             'wb_right_id',
+            'wb_right_tsi',
+            'wb_right_salary',
+            'wb_right_age',
+            'wb_right_age_days',
             'wb_right_experience',
             'wb_right_form',
             'wb_right_stamina',
@@ -141,6 +169,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'wb_right_mother_club',
             'position_id_im_left',
             'im_left_id',
+            'im_left_tsi',
+            'im_left_salary',
+            'im_left_age',
+            'im_left_age_days',
             'im_left_experience',
             'im_left_form',
             'im_left_stamina',
@@ -156,6 +188,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'im_left_mother_club',
             'position_id_im_central',
             'im_central_id',
+            'im_central_tsi',
+            'im_central_salary',
+            'im_central_age',
+            'im_central_age_days',
             'im_central_experience',
             'im_central_form',
             'im_central_stamina',
@@ -171,6 +207,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'im_central_mother_club',
             'position_id_im_right',
             'im_right_id',
+            'im_right_tsi',
+            'im_right_salary',
+            'im_right_age',
+            'im_right_age_days',
             'im_right_experience',
             'im_right_form',
             'im_right_stamina',
@@ -186,6 +226,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'im_right_mother_club',
             'position_id_w_left',
             'w_left_id',
+            'w_left_tsi',
+            'w_left_salary',
+            'w_left_age',
+            'w_left_age_days',
             'w_left_experience',
             'w_left_form',
             'w_left_stamina',
@@ -201,6 +245,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'w_left_mother_club',
             'position_id_w_right',
             'w_right_id',
+            'w_right_tsi',
+            'w_right_salary',
+            'w_right_age',
+            'w_right_age_days',
             'w_right_experience',
             'w_right_form',
             'w_right_stamina',
@@ -216,6 +264,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'w_right_mother_club',
             'position_id_fw_left',
             'fw_left_id',
+            'fw_left_tsi',
+            'fw_left_salary',
+            'fw_left_age',
+            'fw_left_age_days',
             'fw_left_experience',
             'fw_left_form',
             'fw_left_stamina',
@@ -231,6 +283,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'fw_left_mother_club',
             'position_id_fw_central',
             'fw_central_id',
+            'fw_central_tsi',
+            'fw_central_salary',
+            'fw_central_age',
+            'fw_central_age_days',
             'fw_central_experience',
             'fw_central_form',
             'fw_central_stamina',
@@ -246,6 +302,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'fw_central_mother_club',
             'position_id_fw_right',
             'fw_right_id',
+            'fw_right_tsi',
+            'fw_right_salary',
+            'fw_right_age',
+            'fw_right_age_days',
             'fw_right_experience',
             'fw_right_form',
             'fw_right_stamina',
@@ -258,7 +318,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'fw_right_scoring',
             'fw_right_set_pieces',
             'fw_right_loyalty',
-            'fw_right_mother_club:boolean',
+            'fw_right_mother_club',
         ],
     ]) ?>
 

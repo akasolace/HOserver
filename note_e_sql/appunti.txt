@@ -27,7 +27,6 @@ execute note_e_sql/create_view_ho_feedback_result_2019-04-29-16:03:36.sql
 ./yii rbac/init
 ./yii user/init
 
-
 ***************
 ALTER TABLE `yii2_ho_feedback_system_info` ADD `lineupName` VARCHAR(64) NOT NULL AFTER `ho_token`;
 ALTER TABLE `yii2_ho_feedback_rating` ADD `tacticType` INT NOT NULL AFTER `rightAttack`, ADD `tacticSkill` INT NOT NULL AFTER `tacticType`;
@@ -36,4 +35,7 @@ ALTER TABLE `yii2_ho_feedback_rating` ADD `attitude` INT NOT NULL AFTER `tacticS
 ***************
 TSI and AGE
 ALTER TABLE `yii2_ho_feedback_player` ADD `tsi` INT NOT NULL DEFAULT '0' AFTER `playerID`, ADD `age` INT NOT NULL DEFAULT '0' AFTER `tsi`, ADD `age_days` INT NOT NULL DEFAULT '0' AFTER `age`;
-
+***************
+SALARY
+ALTER TABLE `yii2_ho_feedback_player` ADD `salary` INT NOT NULL DEFAULT '0' AFTER `tsi`;
+ALTER TABLE `yii2_ho_feedback_player` CHANGE `salary` `salary` DOUBLE NOT NULL DEFAULT '0.0';

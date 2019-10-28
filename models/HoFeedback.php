@@ -84,6 +84,7 @@ class HoFeedback extends HoFeedbackBase
 
                 $player->playerID = $p["m_iSpielerID"];
                 $player->tsi = $p["m_iTSI"];
+                $p["m_iGehalt"]==0 ? 0 : $player->salary = $p["m_iGehalt"]/10;
                 $player->age = $p["m_iAlter"];
                 $player->age_days = $p["m_iAgeDays"];
                 $player->experience = $p["m_iErfahrung"];
